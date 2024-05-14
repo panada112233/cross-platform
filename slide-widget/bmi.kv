@@ -1,0 +1,66 @@
+<UI>:
+    id:scr_manager
+    Scr_knowledge:
+    Scr_bmi:
+    
+##########       UI หน้า 2     #################
+<Scr_bmi>:
+    name: "scr_bmi"
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: txt_weight
+            hint_text:"txt_weight"
+            font_size: 50
+            size_hint: 1, 0.5
+            input_filter: 'int'
+            readonly: True
+        Slider:
+            id: slider_weight
+            max: 150    # กำหนดค่าสูงสุด
+            min: 30     # กำหนดค่าต่ำสุด
+            step: 0.5   # ค่าที่เริ่มขึ้นลดลง
+            set: 40     # กำหนดค่าเริ่มต้น
+            on_value: txt_weight.text=str(slider_weight.value)
+        TextInput:
+            id: txt_height
+            hint_text:"txt_height"
+            font_size: 50
+            size_hint: 1, 0.5 
+            input_filter: 'int'
+            readonly: True
+        Slider:
+            id: slider_height
+            max: 250    # กำหนดค่าสูงสุด
+            min: 30     # กำหนดค่าต่ำสุด
+            step: 1   # ค่าที่เริ่มขึ้นลดลง
+            set: 40     # กำหนดค่าเริ่มต้น
+            on_value: txt_height.text=str(slider_height.value)
+        Button:
+            id: btn_bmi
+            on_press: root.cal_bmi() # ผูกฟังฏ์ชั่น cal_bmi ไม่ส่งค่าใดๆ
+            text:"BMI"
+            font_size: 50
+            size_hint: 1, 0.5 
+            background_color:[1,0,0,1]
+        Label:
+            id: lbl_bmi
+            text:"bmi = "
+            font_size: 50
+            size_hint: 1, 0.5 
+        Image:
+            id: img_bmi
+
+
+##########       UI หน้า 1     #################
+<Scr_knowledge>:
+    name: "scr_knowledge"
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: "55.jpg"
+        Button:
+            text: 'คำนวณ'
+            font_name:"tahoma"
+            size_hint: 1, 0.2
+            on_press: app.root.current = "scr_bmi"
