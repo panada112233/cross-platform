@@ -1,0 +1,144 @@
+<UI>:
+    id:scr_manager
+    MainScreen:
+    RegisterScreen:
+
+##########       UI หน้า 2     #################
+<RegisterScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.7, 0.5, 0.8, 1 
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    name: "login_scr"
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'ระบบการอบรมใบอนุญาตขับรถ'
+            color: 0, 0, 0, 1
+            font_size: 40
+            font_name:"tahoma"
+        Label:
+            text: 'ลงทะเบียนเข้ารับการอบรม'
+            color: 0, 0, 0, 1
+            font_size: 20
+            font_name:"tahoma"
+        TextInput:
+            id: id_card_input
+            hint_text: 'ระบุเลขบัตรประชาชน'
+            size_hint: None, None
+            width: '350dp'
+            height: '50dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_name:"tahoma"
+
+        TextInput:
+            id: id2_card_input
+            hint_text: 'ระบุเลขบัตรประชาชนอีกครั้ง'
+            size_hint: None, None
+            width: '350dp'
+            height: '50dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_name:"tahoma"
+            
+        TextInput:
+            id: phone_number_input
+            hint_text: 'ระบุเบอร์เบอร์โทรศัพท์'
+            size_hint: None, None
+            width: '350dp'
+            height: '50dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_name:"tahoma"
+            
+        TextInput:
+            id: email_input
+            hint_text: 'ระบุอีเมล'
+            size_hint: None, None
+            width: '350dp'
+            height: '50dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_name:"tahoma"
+            
+        Label:
+            text: 'กรุณาระบุ วันเดือนปี พ.ศ. เกิดให้ถูกต้อง'
+            color: 1, 0, 0, 1
+            size_hint: None, None
+            width: '350dp'
+            height: '50dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_name:"tahoma"
+            
+        TextInput:
+            id: dey_input
+            hint_text: 'วัน'
+            size_hint: None, None
+            width: '350dp'
+            height: '50dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_name:"tahoma"
+            
+        TextInput:
+            id: month_input
+            hint_text: 'เดือน'
+            size_hint: None, None
+            width: '350dp'
+            height: '50dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_name:"tahoma"
+           
+        TextInput:
+            id: year_input
+            hint_text: 'ปี'
+            size_hint: None, None
+            width: '350dp'
+            height: '50dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_name:"tahoma"
+            
+        Label:
+        Button:
+            id: btn_regis
+            text: 'ดำเนินการต่อ'
+            font_name:"tahoma"
+            background_color: 0.5, 0, 1, 1
+            on_release: root.check_data()
+        Image:
+            source: "7.png"
+            size_hint: 1, 1
+        
+            
+##########       UI หน้า 1     #################
+<MainScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.7, 0.5, 0.8, 1 
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    name: "main_scr"
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: "2.png"
+            size_hint: 1, 1
+            pos_hint: {'top': 1}
+        Button:
+            text: 'เข้าสู่ระบบ'
+            font_name:"tahoma"
+            size_hint: 1, 0.2
+            color: "#000000"
+            background_normal: '3.png'
+        Button:
+            text: 'ลงทะเบียนใหม่'
+            font_name:"tahoma"
+            size_hint: 1, 0.2
+            background_normal: '4.png'
+            on_press: app.root.current = "login_scr"
+        Button:
+            text: 'For foreigner'
+            size_hint: 1, 0.2
+            background_normal: '5.png'  
+        Image:
+            source: "1.png"
+            size_hint: 1, 1
