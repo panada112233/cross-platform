@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %} เกี่ยวกับฉัน {% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    -webkit-animation: colorchange 45s infinite; 
+    animation: colorchange 45s infinite;
+}
+@-webkit-keyframes colorchange {
+     0%  {background: #f12cb0;}
+    25%  {background: #05f519;}
+    50%  {background: #3199ee;}
+    75%  {background: #fffb06;}
+    100% {background: #fa0387;}
+}
+@keyframes colorchange {
+      0% {background: #f12cb0;}
+    25%  {background: #05f519;}
+    50%  {background: #3199ee;}
+    75%  {background: #fffb06;}
+    100% {background: #fa0387;}
+}  
+</style>
+</head>
+</html>
+<br>
+<div class="container text-center">
+    <div class="row align-items-start">
+      <div class="container">
+        <img src ="{% static 'img/f8.gif' %}" class="" alt="..." width="1110" height="" svg class="">
+                </div>
+            </div>
+        </div>
+{% endblock %}

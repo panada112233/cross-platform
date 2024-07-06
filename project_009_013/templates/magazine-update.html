@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %} แก้ไขข้อมูลการยืมนิตยสาร {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    -webkit-animation: colorchange 1s infinite; 
+    animation: colorchange 15s infinite;
+}
+@-webkit-keyframes colorchange {
+     0%  {background: #FFFFCC;}
+    25%  {background: #FFCCCC;}
+    50%  {background: #CCFFCC;}
+    75%  {background: #CCCCFF;}
+    100% {background: #FFE4B5;}
+}
+@keyframes colorchange {
+      0% {background: #FFFFCC;}
+    25%  {background: #FFCCCC;}
+    50%  {background: #CCFFCC;}
+    75%  {background: #CCCCFF;}
+    100% {background: #FFE4B5;}
+}  
+</style>
+</head>
+</html>
+    {% if not form.is_valid %}
+        <form method="post" class="m-auto" style="width: 600px">
+            <h1><img src="{% static 'img/f4.gif' %}"></h1>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <p class="mt-4 text-center">
+                <button>บันทึกการเปลี่ยนแปลง</button>
+            </p>
+        </form>
+    {% else %}
+        <h5>บันทึกการเปลี่ยนแปลงแล้ว</h5><br>
+        <a href="{% url 'magazine_edit' %}">ย้อนกลับ</a>
+    {% endif %}
+{% endblock %}

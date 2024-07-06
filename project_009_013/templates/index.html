@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %} หน้าหลัก {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    -webkit-animation: colorchange 20s infinite; 
+    animation: colorchange 20s infinite;
+}
+@-webkit-keyframes colorchange {
+     0%  {background: #FF3366;}
+    25%  {background: #0033FF;}
+    50%  {background: #99FF00;}
+    75%  {background: #6633CC;}
+    100% {background: #FFFF00;}
+}
+@keyframes colorchange {
+      0% {background: #FF3366;}
+    25%  {background: #0033FF;}
+    50%  {background: #99FF00;}
+    75%  {background: #6633CC;}
+    100% {background: #FFFF00;}
+}   
+</style>
+</head>
+<body>
+</body>
+</html>
+<br>
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="container">
+<body>
+<main>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src ="{% static 'img/tk.gif' %}" class="" alt="..." width="1200" height="500" svg class="" /></svg>
+    </div>
+  </div>
+<br>
+<div align="left" class="alert alert-info" role="alert">
+  <a class="navbar-brand text-dark"><h3><strong>ความเป็นมา</strong></h3></a>
+  <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สถาบันอุทยานการเรียนรู้ ก่อตั้งขึ้นเมื่อวันที่ 18 มิถุนายน 2547 
+    เป็นหน่วยงานสร้างสรรค์แหล่งการเรียนรู้เพื่ออนาคตของสำนักงานบริหารและพัฒนาองค์ความรู้ 
+    (องค์การมหาชน) หรือ สบร. เปิดให้บริการแก่ประชาชนเมื่อวันที่ 24 มกราคม 2548 เป็นที่รู้จักในนาม 
+    “ทีเคพาร์ค” (TK Park) ปัจจุบันตั้งอยู่ที่ชั้น 8 อาคารศูนย์การค้าเซ็นทรัลเวิลด์ พื้นที่ 3,700 ตารางเมตร 
+    ได้รับการออกแบบให้เป็นสถานที่ส่งเสริมการอ่านและการเรียนรู้ที่ทันสมัย ผ่านสื่อการเรียนรู้หลากหลายรูปแบบ
+    เช่น หนังสือ ดนตรี มัลติมีเดีย รวมถึงร่วมมือกับองค์กรภายนอกทั้งภาครัฐและเอกชน 
+    ในการจัดกิจกรรมส่งเสริมการแลกเปลี่ยนเรียนรู้สำหรับเด็กและเยาวชน</h5>
+</div>
+<br>
+<div class="container marketing">
+  <div class="row">
+      <div class="col-lg-4">
+          <video src="{% static 'video/tk1.mp4' %}"
+          width="330" height="240" preload="auto" controls>
+          </video>
+      </div>
+      <div class="col-lg-4">
+          <video src="{% static 'video/tk2.mp4' %}"
+          width="330" height="240" preload="auto" controls>
+          </video>
+      </div>
+      <div class="col-lg-4">
+          <video src="{% static 'video/tk3.mp4' %}"
+          width="330" height="240" preload="auto" controls>
+          </video>
+      </div>
+    </div>
+<hr class="featurette-divider">
+</div>
+</main>
+  </body>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,315 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %} หนังสือ {% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    -webkit-animation: colorchange 20s infinite; 
+    animation: colorchange 20s infinite;
+}
+@-webkit-keyframes colorchange {
+     0%  {background: #FF3366;}
+    25%  {background: #0033FF;}
+    50%  {background: #99FF00;}
+    75%  {background: #6633CC;}
+    100% {background: #FFFF00;}
+}
+@keyframes colorchange {
+      0% {background: #FF3366;}
+    25%  {background: #0033FF;}
+    50%  {background: #99FF00;}
+    75%  {background: #6633CC;}
+    100% {background: #FFFF00;}
+}  
+</style>
+</head>
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="container">
+<body>
+<main>
+  <br>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src ="{% static 'img/w1.gif' %}" class="" alt="..." width="1100" height="300" svg class="" /></svg>
+    </div>
+  </div>
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+    <li align="left" class="nav-item"><a href="book/create/" class="btn btn-primary">Borrow a book</a></li>
+    </li>
+</ul>
+  <div class="album py-5 bg-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b1.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              
+              <p align="left" class="card-text">แรกเริ่มเรียนรู้ 1 2 3</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b2.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">แปลกพิกล คนรักหนังสือ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b3.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">My First ABC Book</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b4.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">พลังนิทานอ่านก่อนนอน</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b5.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">ร้านหนังสือรอบโลก</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b6.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p  align="left"class="card-text">Need to know รู้แล้วรู้รอด</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b7.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">จริงครึ่งบรรลัยครึ่ง</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b8.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">โลกในมือนักอ่าน</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b9.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">โชคดีที่มึงได้อ่าน</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b10.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">ความจริงไม่ได้มีหนึ่งเดียว</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b11.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">สิ่งมีชีวิตในโรงแรม</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b12.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">บางทีเราก็ลืมคิดไปว่า...</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b13.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">มีเพื่อนเป็นภูเขา</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b14.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">ผจญภัยในความรัก</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b15.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">ชีวิตดีขึ้นได้ด้วยการเลิกทำ</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b16.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">วิชาใจเบา</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b17.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">เทคนิคเลิกคิดเยอะทำทันที</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b18.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">จิตวิทยาอ่านใจคนขั้นสุด</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b19.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">นาฬิการ่างกาย</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src ="{% static 'img/b20.jpg' %}" width="208" height="200" ></svg>
+            <div class="card-body">
+              <p align="left" class="card-text">ศาสตร์แห่งการทำอาหาร</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-outline-danger" href="book/create/">&nbsp;ยืม&nbsp;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</main>
+{% endblock %}

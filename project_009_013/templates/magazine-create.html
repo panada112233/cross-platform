@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} แบบฟอร์มการยืมนิตยสาร {% endblock %}
+
+{% block style %}
+<style>
+    form ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    -webkit-animation: colorchange 1s infinite; 
+    animation: colorchange 15s infinite;
+}
+@-webkit-keyframes colorchange {
+     0%  {background: #FFFFCC;}
+    25%  {background: #FFCCCC;}
+    50%  {background: #CCFFCC;}
+    75%  {background: #CCCCFF;}
+    100% {background: #FFE4B5;}
+}
+@keyframes colorchange {
+      0% {background: #FFFFCC;}
+    25%  {background: #FFCCCC;}
+    50%  {background: #CCFFCC;}
+    75%  {background: #CCCCFF;}
+    100% {background: #FFE4B5;}
+}
+</style>
+</head>
+</html>
+    {% if not form.is_valid %}
+        <form method="post" class="m-auto" style="width: 600px">
+            <h1><img src="{% static 'img/f2.gif' %}"></h1>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <p class="mt-4 text-center">
+                <button class="btn btn-primary">ส่งข้อมูล</button>
+            </p>
+        </form>
+    {% else %}
+    <h3>ข้อมูลถูกบันทึกแล้ว</h3><br>
+    <a href= "{% url 'magazine_create' %}" > เพิ่มข้อมูลใหม่ </a>
+    {% endif %}
+{% endblock %}

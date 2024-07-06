@@ -1,0 +1,80 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %} รายชื่อคนยืมหนังสือ {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    -webkit-animation: colorchange 1s infinite; 
+    animation: colorchange 10s infinite;
+}
+@-webkit-keyframes colorchange {
+     0%  {background: #FFFFFF;}
+    25%  {background: #CCFFFF;}
+    50%  {background: #BEBEBE;}
+    75%  {background: #FFA07A;}
+    100% {background: #FF1493;}
+}
+@keyframes colorchange {
+      0% {background: #FFFFFF;}
+    25%  {background: #CCFFFF;}
+    50%  {background: #BEBEBE;}
+    75%  {background: #FFA07A;}
+    100% {background: #FF1493;}
+}  
+</style>
+</head>
+</html>
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="container">
+<body>
+<main>
+  <br>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src ="{% static 'img/w4.gif' %}" class="" alt="..." width="1100" height="300" svg class="" /></svg>
+    </div>
+  </div>
+</div>
+</div>
+<table class="table table-danger table-striped">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <li align="left" class="nav-item"><a href="book/create/" class="btn btn-warning">Borrow a book</a></li>
+        <li align="right" class="nav-item"><a href="book/search/" class="btn btn-success">Search for names</a></li>
+        </li>
+    </ul>
+<tr>
+    <th>ลำดับที่</th>
+    <th>ชื่อหนังสือ</th>
+    <th>วันที่ยืม</th>
+    <th>วันที่คืน</th>
+    <th>ชื่อผู้ยืม</th>
+    <th>ที่อยู่</th>
+    <th>อีเมล</th>
+    <th>โทรศัพท์</th>
+</tr>
+</thead>
+{% for r in data %}
+<tr class="table-info">
+    <td>{{ r.no1 }}</td>
+    <td align="left">{{ r.type }}</td>
+    <td>{{ r.borrowingdate|date:'j F Y' }}</td>
+    <td>{{ r.date_of_return|date:'j F Y' }}</td>
+    <td align="left">{{ r.firstname }} {{ r.lastname }}</td>
+    <td align="left">{{ r.address }}</td>
+    <td align="left">{{ r.addition_note }}</td>
+    <td>{{ r.phone }}</td>
+</tr>
+{% endfor %}
+</table>
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <li class="nav-item">
+  <li align="left" class="nav-item"><a href="{% url 'book_edit' %}" class="btn btn-danger">Update Book</a></li>
+  </li>
+</ul>
+{% endblock %}

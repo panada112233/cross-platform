@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<base href="http://127.0.0.1:8000/">
+</head>
+<body>
+    
+  <nav style="background-color: #FF0066" class="navbar navbar-expand-lg shadow-lg">
+    <div class="container-fluid">
+      <img src="{% static 'img/tk.png' %}">&nbsp;
+          <a class="navbar-brand text-warning" href="home/"><strong>TK Park</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="home/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="book/">Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="magazine/">Magazine</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="book/read/">List Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="magazine/read/">List Magazines</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="about/">Abount</a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <ul class="nav">
+                {% if not user.is_authenticated %}
+                <li class="nav-item"><a href="login" class="btn btn- btn-outline-success mx-2">Log in</a></li>
+                <li class="nav-item"><a href="signup" class="btn btn- btn-outline-primary mx-2">Sign up</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <strong class="navbar-brand text-warning">Hello,  {{ request.user.username }}</strong>&nbsp;
+                <form method="post" action="{% url 'logout' %}" novalidate>
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn- btn-outline-danger">Log Out</button>
+                </form>
+                {% endif %}
+              </ul>
+              
+            </ul>
+            
+            {% block form %} {% endblock %}
+            
+          </div>
+        </div>
+      </nav>
+
+    {% block body %} 
+
+    {% endblock %}
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+    <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+    
+</body>
+</html>
