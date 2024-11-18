@@ -1,0 +1,11 @@
+.emp_login-container {
+    background-image: url("./assets/E.gif"); /* เพิ่มภาพพื้นหลัง */
+    background-size: cover; /* ให้ภาพพื้นหลังขยายเต็มพื้นที่ */
+    background-position: center; /* ตั้งให้ภาพอยู่ตรงกลาง */
+    /*background-attachment: fixed; /* ทำให้ภาพพื้นหลังไม่เลื่อนตามการเลื่อนหน้า */
+    height: 100vh; /* ให้พื้นหลังเต็มหน้าจอ */
+    display: flex;
+    justify-content: center; /* จัดตำแหน่งเนื้อหาอยู่ตรงกลางในแนวนอน */
+    align-items: center; /* จัดตำแหน่งเนื้อหาอยู่ตรงกลางในแนวตั้ง */
+    transition: background-position 0.1s ease-out;
+  } 

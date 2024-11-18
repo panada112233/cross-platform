@@ -1,0 +1,23 @@
+.register-container {
+  background-image: url("./assets/R.gif"); /* เพิ่มภาพพื้นหลัง */
+  background-size: cover; /* ให้ภาพพื้นหลังขยายเต็มพื้นที่ */
+  background-position: center; /* ตั้งให้ภาพอยู่ตรงกลาง */
+  height: 100vh; /* ให้พื้นหลังเต็มหน้าจอ */
+  display: flex;
+  justify-content: flex-start; /* ชิดซ้าย */
+  align-items: center; /* จัดตำแหน่งในแนวตั้งตรงกลาง */
+  padding-left: 20px; /* เพิ่มระยะห่างจากซ้าย */
+}
+
+.card {
+  border-radius: 15px; /* ขอบมน */
+  box-shadow: 0 4px 8px rgba(203, 15, 15, 0.1); /* เพิ่มเงา */
+  padding: 30px; /* เพิ่มระยะห่างภายใน */
+  max-width: 700px; /* ปรับให้กว้างขึ้น (เปลี่ยนจาก 700px เป็น 1000px) */
+  width: 60%; /* ทำให้ขยายได้ตามความกว้างของหน้าจอ */
+}
+
+
+.text-danger {
+  color: red;
+}
