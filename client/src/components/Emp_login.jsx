@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../Emp_login.css'; // Import CSS สำหรับการปรับแต่ง
 import imgPath from '../assets/2.png';
 
-const Emp_login = () => {
+const Emp_login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -26,6 +26,7 @@ const Emp_login = () => {
       if (email === 'test@example.com' && password === 'password') {
         setError('');
         alert('เข้าสู่ระบบสำเร็จ');
+        setIsLoggedIn(true); // ตั้งค่าให้ isLoggedIn เป็น true
         navigate('/EmpHome');
       } else {
         setError('กรุณาตรวจสอบอีเมลและรหัสผ่าน');
@@ -90,6 +91,8 @@ const Emp_login = () => {
               </a>
             </div>
           </form>
+          <a href="/ForgotPassword" className="text-sm text-blue-500 mt-2">ลืมรหัสผ่าน?</a>
+
           {error && (
             <div className="text-red-500 mt-2 text-center">{error}</div>
           )}

@@ -1,109 +1,76 @@
 import React from "react";
-import EmpBase from "./EmpBase";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const EmpHome = () => {
     const userName = "ชื่อ-นามสกุล"; // Replace with dynamic user data
     const statistics = {
-        totalEmployees: 50, // Replace with dynamic data
+        totalEmployees: 50,
         totalDocuments: 100,
         totalExperience: 30,
     };
     const recentActivities = [
-        { description: "อัปโหลดเอกสารใหม่", timestamp: "2 ชั่วโมง", type: "upload" },
-        { description: "แก้ไขประสบการณ์ทำงาน", timestamp: "1 วัน", type: "edit" },
-    ]; // Replace with dynamic data
+        { description: "อัปโหลดเอกสารใหม่", timestamp: "2 ชั่วโมงที่แล้ว", type: "upload" },
+        { description: "แก้ไขประสบการณ์ทำงาน", timestamp: "1 วันที่แล้ว", type: "edit" },
+    ];
 
     return (
-        <EmpBase>
-            <div className="card shadow m-2">
-                <div className="card-body">
-                    <div className="container mt-4">
-                        <div className="row">
-                            <div className="col-md-12 text-center mb-4">
-                                <h4 className="text-danger p-2" style={{ borderBottom: "3px solid orangered" }}>
-                                    ระบบจัดเก็บเอกสารพนักงาน
-                                </h4>
-                                <h5 className="text-success">ยินดีต้อนรับ, {userName}</h5>
-                                <p className="text-muted">คุณสามารถจัดการข้อมูลส่วนตัวและเอกสารได้จากเมนูด้านล่าง</p>
-                            </div>
+        <div className="min-h-screen bg-base-200">
+            <div className="flex flex-col items-center">
+                <div className="text-center mt-6">
+                    <h2 className="text-2xl font-bold text-primary">ระบบจัดเก็บเอกสารพนักงาน</h2>
+                    <h4 className="text-xl text-success mt-2">ยินดีต้อนรับ, {userName}</h4>
+                </div>
 
-                            <div className="col-md-12">
-                                <div className="row text-center">
-                                    <div className="col-sm-4 mb-3">
-                                        <Link to="/EmpHome/Profile" className="btn btn-outline-info w-100 py-3 shadow">
-                                            ข้อมูลพนักงาน
-                                        </Link>
-                                    </div>
-                                    <div className="col-sm-4 mb-3">
-                                        <Link to="/EmpHome/Document" className="btn btn-outline-primary w-100 py-3 shadow">
-                                            จัดการเอกสาร
-                                        </Link>
-                                    </div>
-                                    <div className="col-sm-4 mb-3">
-                                        <Link to="/EmpHome/My_experience" className="btn btn-outline-warning w-100 py-3 shadow">
-                                            ประสบการณ์ทำงาน
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="row text-center">
-                                    <div className="col-sm-4 mb-3">
-                                        <Link to="/EmpHome/My_education" className="btn btn-outline-success w-100 py-3 shadow">
-                                            การศึกษา
-                                        </Link>
-                                    </div>
-                                    <div className="col-sm-4 mb-3">
-                                        <Link to="/EmpHome/Change_password" className="btn btn-outline-secondary w-100 py-3 shadow">
-                                            เปลี่ยนรหัสผ่าน
-                                        </Link>
-                                    </div>
-                                    <div className="col-sm-4 mb-3">
-                                        <Link to="/EmpHome/Logout" className="btn btn-outline-danger w-100 py-3 shadow">
-                                            ออกจากระบบ
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
+                <div className="grid grid-cols-2 gap-4 mt-6 w-10/12">
+                    {/* ปุ่มเมนู */}
+                    {[
+                        { name: "ข้อมูลพนักงาน", to: "/EmpHome/Profile", color: "btn-info" },
+                        { name: "จัดการเอกสาร", to: "/EmpHome/Document", color: "btn-primary" },
+                        { name: "ประสบการณ์ทำงาน", to: "/EmpHome/My_experience", color: "btn-warning" },
+                        { name: "การศึกษา", to: "/EmpHome/My_education", color: "btn-success" },
+                        { name: "เปลี่ยนรหัสผ่าน", to: "/EmpHome/Change_password", color: "btn-secondary" },
+                        { name: "ออกจากระบบ", to: "/EmpHome/Logout", color: "btn-error" },
+                    ].map((menu, index) => (
+                        <Link key={index} to={menu.to} className={`btn ${menu.color} w-full text-lg`}>
+                            {menu.name}
+                        </Link>
+                    ))}
+                </div>
 
-                            <div className="col-md-12 mt-4">
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="card shadow-sm">
-                                            <div className="card-body">
-                                                <h5 className="card-title text-primary">สถิติระบบ</h5>
-                                                <p>พนักงานทั้งหมด: <strong>{statistics.totalEmployees}</strong> คน</p>
-                                                <p>เอกสารทั้งหมด: <strong>{statistics.totalDocuments}</strong> ไฟล์</p>
-                                                <p>ประสบการณ์ทำงานที่บันทึกไว้: <strong>{statistics.totalExperience}</strong> รายการ</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="card shadow-sm">
-                                            <div className="card-body">
-                                                <h5 className="card-title text-primary">กิจกรรมล่าสุด</h5>
-                                                <ul className="list-unstyled">
-                                                    {recentActivities.length > 0 ? (
-                                                        recentActivities.map((activity, index) => (
-                                                            <li key={index}>
-                                                                <i className={`fas fa-${activity.type} text-secondary`}></i> {activity.description} -{" "}
-                                                                <span className="text-muted">{activity.timestamp}</span>
-                                                            </li>
-                                                        ))
-                                                    ) : (
-                                                        <li>ไม่มีข้อมูลกิจกรรมล่าสุด</li>
-                                                    )}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                {/* สถิติระบบ และ กิจกรรมล่าสุด */}
+                <div className="mt-8 flex gap-6 justify-center w-10/12">
+                    {/* สถิติระบบ */}
+                    <div className="card bg-base-100 shadow-lg w-1/2">
+                        <div className="card-body">
+                            <h3 className="card-title text-primary">สถิติระบบ</h3>
+                            <p>พนักงานทั้งหมด: <strong>{statistics.totalEmployees}</strong> คน</p>
+                            <p>เอกสารทั้งหมด: <strong>{statistics.totalDocuments}</strong> ไฟล์</p>
+                            <p>ประสบการณ์ทำงานที่บันทึกไว้: <strong>{statistics.totalExperience}</strong> รายการ</p>
+                        </div>
+                    </div>
 
+                    {/* กิจกรรมล่าสุด */}
+                    <div className="card bg-base-100 shadow-lg w-1/2">
+                        <div className="card-body">
+                            <h3 className="card-title text-primary">กิจกรรมล่าสุด</h3>
+                            <ul>
+                                {recentActivities.length > 0 ? (
+                                    recentActivities.map((activity, index) => (
+                                        <li key={index} className="my-2">
+                                            <span>{activity.description}</span> -{" "}
+                                            <span className="text-sm text-gray-500">{activity.timestamp}</span>
+                                        </li>
+                                    ))
+                                ) : (
+                                    <li>ไม่มีข้อมูลกิจกรรมล่าสุด</li>
+                                )}
+                            </ul>
                         </div>
                     </div>
                 </div>
+
             </div>
-        </EmpBase>
+        </div>
     );
 };
 
